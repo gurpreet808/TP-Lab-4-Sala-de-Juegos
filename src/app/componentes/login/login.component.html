@@ -1,14 +1,27 @@
-<div>
-    <h1>Login</h1>
-    <div>
-        <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" formControlName="email">
+<div id="login_container">
+    <div id="login_form_container">
+        <div id="login_header">
+            <img src="assets/logos/main_logo.jpg" alt="logo">
+            <div id="login_title" class="text-900 text-3xl font-medium mb-3">Iniciar sesión</div>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" formControlName="password">
+
+        <div id="login_form">
+            <div id="correo_container" name="login_form_input">
+                <label for="correo">Correo Electrónico</label>
+                <input id="correo" [(ngModel)]="correo" type="text" pInputText>
+            </div>
+
+            <div id="clave_container" name="login_form_input">
+                <label for="clave">Contraseña</label>
+                <p-password id="clave" [(ngModel)]="clave" inputStyleClass="widthfull" styleClass="widthfull"
+                    [feedback]="false" [toggleMask]="true"></p-password>
+                <a id="olvide_clave" (click)="olvideClave()">¿Olvidaste tu contraseña?</a>
+            </div>
         </div>
-        <button type="submit">Login</button>
+
+        <div id="login_footer">
+            <button pButton pRipple label="Iniciar sesión" icon="fas fa-sign-in-alt" class="p-button-secondary"
+                (click)="login()"></button>
+        </div>
     </div>
 </div>

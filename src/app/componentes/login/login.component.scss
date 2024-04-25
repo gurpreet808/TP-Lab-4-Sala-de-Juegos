@@ -1,0 +1,72 @@
+div#login_container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#login_form_container {
+    padding: 4rem 2rem;
+    border-radius: 0.25rem;
+    background-color: #1f3f40;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    max-width: 90dvw;
+    min-width: 35dvh;
+}
+
+div#login_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+        height: 100px;
+    }
+
+    div#login_title {
+        font-size: 1.75rem;
+        font-weight: 500;
+        color: #fff;
+    }
+}
+
+div#login_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+div[name="login_form_input"] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+div#login_footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+a#olvide_clave {
+    font-weight: 500;
+    text-decoration: no-underline;
+    color: #2196f3;
+    cursor: pointer;
+    text-align: right;
+}
