@@ -1,0 +1,79 @@
+div#quien_soy_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+div#quien_soy_card {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90vw;
+    max-width: 550px;
+    background-color: rgb(255 255 255 / 20%);
+    text-align: center;
+}
+
+div#img_alumno_container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #7d7d7d69;
+}
+
+img#img_alumno {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+div#datos_personales_container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+div[name="titulo"] {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+div[name="texto"] {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+div[name="alumno_dato"] {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+div[name="alumno_dato"]>label {
+    font-weight: bold;
+}
+
+div#nombre_alumno_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+div#descripcion_container {
+    text-align: center;
+}
