@@ -1,11 +1,8 @@
-<div id="app_container">
-  <!-- <p-toast [style]="{marginTop: '10px'}" [preventOpenDuplicates]="true"></p-toast> -->
-  
+<div id="app_container" #app_container>
   <div id="navbar_container">
-      <nav-bar></nav-bar>
+    <nav-bar></nav-bar>
   </div>
-
-  <div id="main_container">
-      <router-outlet></router-outlet>
+  <div id="main_container" #main_container>
+    <router-outlet></router-outlet>
   </div>
 </div>
