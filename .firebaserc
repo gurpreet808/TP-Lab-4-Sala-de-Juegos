@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lab4-saladejuegos": {
+      "hosting": {
+        "tp-lab4-saladejuegos": [
+          "lab4-saladejuegos"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lab4-saladejuegos"
+  }
+}

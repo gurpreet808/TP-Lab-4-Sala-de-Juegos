@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TP_LAB4_SalaDeJuegos": {
+    "tp-lab4-saladejuegos": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TP_LAB4_SalaDeJuegos:build:production"
+              "buildTarget": "tp-lab4-saladejuegos:build:production"
             },
             "development": {
-              "buildTarget": "TP_LAB4_SalaDeJuegos:build:development"
+              "buildTarget": "tp-lab4-saladejuegos:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "TP_LAB4_SalaDeJuegos:build"
+            "buildTarget": "tp-lab4-saladejuegos:build"
           }
         },
         "test": {
@@ -94,6 +94,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "tp-lab4-saladejuegos:build:production",
+              "serveTarget": "tp-lab4-saladejuegos:serve:production"
+            },
+            "development": {
+              "buildTarget": "tp-lab4-saladejuegos:build:development",
+              "serveTarget": "tp-lab4-saladejuegos:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
