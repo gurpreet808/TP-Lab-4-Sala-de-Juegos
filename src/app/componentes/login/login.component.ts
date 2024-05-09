@@ -25,6 +25,21 @@ export class LoginComponent implements OnInit {
   correo: string = '';
   clave: string = '';
 
+  readonly ACCESO_RAPIDO: { correo: string, clave: string }[] = [
+    {
+      correo: "esteban@quito.com",
+      clave: "esteban2024"
+    },
+    {
+      correo: "armando@paredes.com",
+      clave: "armando2024"
+    },
+    {
+      correo: "cosme@fulanito.com",
+      clave: "cosme2024"
+    },
+  ];
+
   constructor(public router: Router, public servAuth: AuthService, public messageService: MessageService) {
     //Luego se reemplaza por guard
     this.servAuth.IsLoggedIn().then(
@@ -69,6 +84,11 @@ export class LoginComponent implements OnInit {
         //this.messageService.add({ severity: 'error', life: 10000, summary: 'Error desconocido', detail: 'Revise la consola' });
       }
     );
+  }
+
+  AccesoRapido(usuario: { correo: string, clave: string }) {
+    this.correo = usuario.correo;
+    this.clave = usuario.clave;
   }
 
   IrRegistrarme() {
