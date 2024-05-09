@@ -80,7 +80,7 @@ export class UsuarioService {
     return setDoc(docRef, log);
   }
 
-  TraerLoginLogs(){
+  TraerLoginLogs() {
     let query: Query<DocumentData, DocumentData> = this.loginlogsRef;
     return collectionData<DocumentData>(query, { idField: 'uid' });
   }
@@ -91,7 +91,7 @@ export class UsuarioService {
 
   async Ready(): Promise<boolean> {
     if (this.firstRun) {
-      console.log("firstRun UsuarioService READY");
+      //console.log("firstRun UsuarioService READY");
       await firstValueFrom(this.usuarios.pipe(skip(1)));
     }
 

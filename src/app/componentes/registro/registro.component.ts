@@ -27,9 +27,10 @@ export class RegistroComponent {
   clave2: string = "";
 
   constructor(public servAuth: AuthService, private router: Router, public messageService: MessageService) {
+    //Luego se reemplaza por guard
     this.servAuth.IsLoggedIn().then(
       (rta: any) => {
-        console.log(rta);
+        //console.log(rta);
         if (rta) {
           this.router.navigate(['/']);
         }

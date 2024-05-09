@@ -26,9 +26,10 @@ export class LoginComponent implements OnInit {
   clave: string = '';
 
   constructor(public router: Router, public servAuth: AuthService, public messageService: MessageService) {
+    //Luego se reemplaza por guard
     this.servAuth.IsLoggedIn().then(
       (rta: any) => {
-        console.log(rta);
+        //console.log(rta);
         if (rta) {
           this.router.navigate(['/']);
         }

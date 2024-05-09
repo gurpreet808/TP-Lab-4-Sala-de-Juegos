@@ -55,7 +55,7 @@ export class NavBarComponent {
     //Luego se reemplaza por guard
     this.servAuth.IsLoggedIn().then(
       (rta: any) => {
-        console.log(rta);
+        //console.log(rta);
         if (rta == false) {
           this.router.navigate(['/login']);
         }
