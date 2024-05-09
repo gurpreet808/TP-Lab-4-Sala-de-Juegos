@@ -95,6 +95,7 @@ export class AuthService {
   async RegistrarUsuarioConEmail(usuario: Usuario, password: string): Promise<Usuario> {
     usuario.uid = await createUserWithEmailAndPassword(this.auth, usuario.email, password).then(
       (user: UserCredential) => {
+        this._servUsuario.LoginLog(user.user.uid, usuario.email);
         return user.user.uid;
       }
     ).catch(
