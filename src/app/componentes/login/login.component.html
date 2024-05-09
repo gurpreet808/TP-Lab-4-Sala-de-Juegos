@@ -1,3 +1,4 @@
+@if (servAuth.logueado == false) {
 <div id="login_container">
     <div id="login_form_container">
         <div id="login_header">
@@ -20,8 +21,12 @@
         </div>
 
         <div id="login_footer">
-            <button pButton pRipple label="Iniciar sesión" icon="fas fa-sign-in-alt" class="p-button-secondary"
+            <button pButton pRipple label="Iniciar sesión" icon="fas fa-sign-in-alt" class="p-button-primary"
                 (click)="login()"></button>
+
+            <button pButton pRipple label="Registrarme" icon="fa-solid fa-user-plus
+                " class="p-button-secondary" (click)="IrRegistrarme()"></button>
         </div>
     </div>
 </div>
+}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
+import { AuthService } from '../../modulos/auth/servicios/auth.service';
 
 @Component({
   selector: 'nav-bar',
@@ -19,11 +20,6 @@ export class NavBarComponent {
       label: 'Home',
       icon: 'fa-solid fa-house',
       routerLink: '/'
-    },
-    {
-      label: 'Login',
-      icon: 'fa-solid fa-sign-in-alt',
-      routerLink: '/login'
     },
     {
       label: 'Quién Soy',
@@ -55,10 +51,27 @@ export class NavBarComponent {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public servAuth: AuthService) {
+    //Luego se reemplaza por guard
+    this.servAuth.IsLoggedIn().then(
+      (rta: any) => {
+        console.log(rta);
+        if (rta == false) {
+          this.router.navigate(['/login']);
+        }
+      }
+    );
+  }
 
   Desloguear() {
-    //this.servUsuario.LogOut();
-    this.router.navigateByUrl('/login');
+    this.servAuth.LogOut().then(
+      () => {
+        this.router.navigateByUrl('/login');
+      }
+    ).catch(
+      (error) => {
+        console.log("Error en deslogueo", error);
+      }
+    );
   }
 }

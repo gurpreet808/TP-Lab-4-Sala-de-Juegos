@@ -1,11 +1,11 @@
-div#login_container {
+div#registrarme_container {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-div#login_form_container {
+div#registrarme_form_container {
     padding: 4rem 2rem;
     border-radius: 0.25rem;
     background-color: #1f3f40;
@@ -18,7 +18,7 @@ div#login_form_container {
     min-width: 35dvh;
 }
 
-div#login_header {
+div#registrarme_header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,21 +28,21 @@ div#login_header {
         height: 100px;
     }
 
-    div#login_title {
+    div#registrarme_title {
         font-size: 1.75rem;
         font-weight: 500;
         color: #fff;
     }
 }
 
-div#login_form {
+div#registrarme_form {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-div[name="login_form_input"] {
+div[name="registrarme_form_input"] {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -57,7 +57,7 @@ div[name="login_form_input"] {
     }
 }
 
-div#login_footer {
+div#registrarme_footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

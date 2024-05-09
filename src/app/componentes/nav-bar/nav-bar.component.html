@@ -1,5 +1,12 @@
+@if (servAuth.logueado == true) {
 <p-menubar [model]="items">
     <ng-template pTemplate="start">
         <img src="assets/logos/main_logo.jpg" height="40" class="mr-2" />
     </ng-template>
+
+    <ng-template pTemplate="end">
+        <button pButton label="Desloguear" icon="fas fa-sign-out-alt" class="p-button-danger" iconPos="right"
+            (click)="Desloguear()"></button>
+    </ng-template>
 </p-menubar>
+}

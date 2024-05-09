@@ -1,0 +1,36 @@
+@if (servAuth.logueado == false) {
+<div id="registrarme_container">
+    <div id="registrarme_form_container">
+        <div id="registrarme_header">
+            <div id="registrarme_title" class="text-900 text-3xl font-medium mb-3">Registrarme</div>
+        </div>
+
+        <div id="registrarme_form">
+            <div id="correo_container" name="registrarme_form_input">
+                <label for="correo">Correo Electrónico</label>
+                <input id="correo" [(ngModel)]="correo" type="text" pInputText>
+            </div>
+
+            <div id="clave_container" name="registrarme_form_input">
+                <label for="clave">Contraseña</label>
+                <p-password id="clave" [(ngModel)]="clave" inputStyleClass="widthfull" styleClass="widthfull"
+                    [feedback]="false" [toggleMask]="true"></p-password>
+            </div>
+
+            <div id="clave2_container" name="registrarme_form_input">
+                <label for="clave2">Repita la contraseña</label>
+                <p-password id="clave2" [(ngModel)]="clave2" inputStyleClass="widthfull" styleClass="widthfull"
+                    [feedback]="false" [toggleMask]="true"></p-password>
+            </div>
+        </div>
+
+        <div id="registrarme_footer">
+            <button pButton pRipple label="Registrarme" icon="fa-solid fa-user-plus" class="p-button-primary"
+                (click)="Registrarme()"></button>
+
+            <button pButton pRipple label="Ya tengo una cuenta" icon="fas fa-sign-in-alt
+                " class="p-button-secondary" (click)="IrLogin()"></button>
+        </div>
+    </div>
+</div>
+}
