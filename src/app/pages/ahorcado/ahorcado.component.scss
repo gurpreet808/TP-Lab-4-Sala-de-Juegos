@@ -1,0 +1,25 @@
+div#ahorcado_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+div#teclado_container{
+    max-width: 50rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+div#palabra{
+    letter-spacing: 0.5rem;
+    font-size: 2rem;
+    color: rgb(180, 180, 180);
+}

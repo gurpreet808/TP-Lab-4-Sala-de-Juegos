@@ -1,1 +1,27 @@
-<p>ahorcado works!</p>
+<div id="ahorcado_container">
+    <h1>Ahorcado</h1>
+
+    <div id="palabra">
+        {{ palabra_oculta }}
+    </div>
+
+    <div id="intentos">
+        <p>Intentos restantes: {{ intentos_restantes }}</p>
+    </div>
+
+    @if (!finalizado) {
+    <div id="teclado_container">
+        @for (letra of letras; track $index) {
+        <div name="letra_container">
+            <button pButton class="p-button-secondary" (click)="ElegirLetra(letra)">{{ letra }}</button>
+        </div>
+        }
+    </div>
+    }
+
+    @if (finalizado) {
+    <div>
+        <button pButton class="p-button-primary" (click)="ResetJuego()">Volver a Jugar</button>
+    </div>
+    }
+</div>

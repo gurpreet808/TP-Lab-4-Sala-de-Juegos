@@ -8,6 +8,7 @@ export const routes: Routes = [
     { path: "login", component: LoginComponent },
     { path: "registrarme", loadComponent: () => import('./pages/registro/registro.component').then(c => c.RegistroComponent) },
     { path: "quien-soy", loadComponent: () => import('./pages/quien-soy/quien-soy.component').then(c => c.QuienSoyComponent) },
+    { path: "ahorcado", loadComponent: () => import('./pages/ahorcado/ahorcado.component').then(c => c.AhorcadoComponent) },
     { path: "sala-chat", loadComponent: () => import('./pages/sala-chat/sala-chat.component').then(c => c.SalaChatComponent) },
     { path: "**", component: Error404Component }
 ];
