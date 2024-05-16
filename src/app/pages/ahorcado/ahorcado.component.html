@@ -1,12 +1,13 @@
 <div id="ahorcado_container">
     <h1>Ahorcado</h1>
 
-    <div id="palabra">
-        {{ palabra_oculta }}
+    <div id="ahorcado_imagen_container">
+        <img [src]='"assets/ahorcado/"+intentos_restantes+".png"' alt="Ahorcado">
+        <!-- <p>Intentos restantes: {{ intentos_restantes }}</p> -->
     </div>
 
-    <div id="intentos">
-        <p>Intentos restantes: {{ intentos_restantes }}</p>
+    <div id="palabra">
+        {{ palabra_oculta }}
     </div>
 
     @if (!finalizado) {
