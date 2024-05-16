@@ -6,20 +6,19 @@ div#sala_chat_container {
     height: 100%;
 }
 
-$sendmessagebox: 4rem;
-
 div#mensajes_container {
-    height: calc(100% - #{$sendmessagebox});
+    height: 100%;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
     padding: 0.25rem;
     margin: 0;
     gap: 0.25rem;
+    min-height: 0px;
 }
 
 div#enviar_mensaje_container {
-    height: $sendmessagebox;
+    height: 4rem;
     display: flex;
     flex-direction: row;
     padding: 0;
@@ -29,6 +28,8 @@ div#enviar_mensaje_container {
     input {
         //flex-grow: 1;
         width: 100%;
+        background-color: #ffffff;
+        border: 1px solid;
     }
 }
 

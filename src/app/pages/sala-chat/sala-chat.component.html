@@ -18,7 +18,9 @@
     </div>
 
     <div id="enviar_mensaje_container">
-        <input type="text" [(ngModel)]="mensaje.mensaje" />
-        <button pButton icon="fa-regular fa-paper-plane" (click)="enviarMensaje()"></button>
+        <p-inputGroup>
+            <input id="enviar_mensaje" type="text" pInputText [(ngModel)]="mensaje.mensaje" />
+            <button pButton icon="fa-regular fa-paper-plane" (click)="enviarMensaje()"></button>
+        </p-inputGroup>
     </div>
 </div>

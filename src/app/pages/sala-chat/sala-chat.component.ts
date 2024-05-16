@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { AutorPropioPipe } from '../../pipes/autor-propio.pipe';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-sala-chat',
@@ -16,7 +18,9 @@ import { ButtonModule } from 'primeng/button';
     CommonModule,
     AutorPropioPipe,
     DatePipe,
-    ButtonModule
+    ButtonModule,
+    InputTextModule,
+    InputGroupModule
   ],
   templateUrl: './sala-chat.component.html',
   styleUrl: './sala-chat.component.scss'
@@ -63,7 +67,7 @@ export class SalaChatComponent {
 
   async scrollDown() {
     const container = this.mensajesContainer.nativeElement;
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 500));
     container.scroll({
       top: container.scrollHeight,
       behavior: 'smooth'
