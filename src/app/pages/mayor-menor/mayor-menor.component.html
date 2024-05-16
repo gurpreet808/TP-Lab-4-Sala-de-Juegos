@@ -1,1 +1,37 @@
-<p>mayor-menor works!</p>
+<div id="mayormenor_container">
+    <h1 id="mayormenor_title">Mayor o menor</h1>
+
+    <div id="mayormenor_body">
+        @if (cartaActual !== undefined) {
+        <div id="mayormenor_izq_container">
+            <img [src]="cartaActual.imagen" [alt]='cartaActual.numero+" "+cartaActual.palo'>
+
+            <div id="mayormenor_puntos">
+                Puntos: {{ puntos }}
+            </div>
+        </div>
+        }
+
+        <div id="mayormenor_der_container">
+            <img src="assets/cartas/reverso.png" alt="reverso">
+
+            <div id="mayormenor_button_container">
+                <button pButton pRipple class="p-button-success" (click)="verificarAdivinanza(true)"
+                    [disabled]="juegoTerminado || cartaActual === undefined">Mayor</button>
+                <button pButton pRipple class="p-button-danger" (click)="verificarAdivinanza(false)"
+                    [disabled]="juegoTerminado || cartaActual === undefined">Menor</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mayormenor_cartas_restantes">
+        Cartas restantes en el mazo: {{ cartasRestantes }}
+    </div>
+
+    <div id="mayormenor_reiniciar_container">
+        @if (juegoTerminado) {
+        <button pButton pRipple class="p-button-primary" (click)="reiniciarJuego()">Volver a
+            jugar</button>
+        }
+    </div>
+</div>
