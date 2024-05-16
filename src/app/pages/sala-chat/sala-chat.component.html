@@ -1,0 +1,24 @@
+<div id="sala_chat_container">
+    <div id="mensajes" #mensajes_container>
+        @for (mensaje of mensajes; track $index) {
+        <div name="mensaje_card" [class.mensaje-propio]="mensaje.nombre === servAuth.usuarioActual.value!.email">
+            <div name="mensaje_autor">
+                {{mensaje.nombre | autorPropio: servAuth.usuarioActual.value!}}
+            </div>
+
+            <div name="mensaje_texto">
+                {{mensaje.mensaje}}
+            </div>
+
+            <div name="mensaje_fecha">
+                {{mensaje.fecha | date:'dd/MM/yyyy HH:mm'}}
+            </div>
+        </div>
+        }
+    </div>
+
+    <div id="enviar_mensaje">
+        <input type="text" [(ngModel)]="mensaje.mensaje" />
+        <button pButton icon="fa-regular fa-paper-plane" (click)="enviarMensaje()"></button>
+    </div>
+</div>

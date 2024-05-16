@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     {
       correo: "cosme@fulanito.com",
       clave: "cosme2024"
-    },
+    }
   ];
 
   constructor(public router: Router, public servAuth: AuthService, public messageService: MessageService) {
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.servAuth.LogInEmail(this.correo, this.clave).then(
       (rta: UserCredential) => {
-        console.log("login credential", rta);
+        //console.log("login credential", rta);
         this.messageService.add({ severity: 'success', life: 10000, summary: 'Bien', detail: `Te damos la bienvenida ${rta.user.email}` });
         this.router.navigate(['/']);
       }

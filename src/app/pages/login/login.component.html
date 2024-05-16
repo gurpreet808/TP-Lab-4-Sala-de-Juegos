@@ -1,12 +1,12 @@
 @if (servAuth.logueado == false) {
 <div id="login_container">
-    <div id="login_form_container">
+    <div id="login_card_container">
         <div id="login_header">
             <img src="assets/logos/main_logo.jpg" alt="logo">
             <div id="login_title" class="text-900 text-3xl font-medium mb-3">Iniciar sesión</div>
         </div>
 
-        <div id="login_form">
+        <div id="login_form_container">
             <div id="correo_container" name="login_form_input">
                 <label for="correo">Correo Electrónico</label>
                 <input id="correo" [(ngModel)]="correo" type="text" pInputText>
@@ -25,13 +25,18 @@
                 (click)="login()"></button>
 
             <button pButton pRipple label="Registrarme" icon="fa-solid fa-user-plus
-                " class="p-button-secondary" (click)="IrRegistrarme()"></button>
+                    " class="p-button-secondary" (click)="IrRegistrarme()"></button>
 
-            <div>Accesos rápidos</div>
-            @for (user of ACCESO_RAPIDO; track $index) {
-            <button pButton pRipple [label]="user.correo" class="p-button-help"
-                (click)="AccesoRapido(user)"></button>
-            }
+            <div id="accesos_rapidos_container">
+                <div id="accesos_rapidos_title_container">Accesos rápidos</div>
+
+                <div id="accesos_rapidos_button_container">
+                    @for (user of ACCESO_RAPIDO; track $index) {
+                    <button pButton pRipple [label]="user.correo" class="p-button-help"
+                        (click)="AccesoRapido(user)"></button>
+                    }
+                </div>
+            </div>
         </div>
     </div>
 </div>

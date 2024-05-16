@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, firstValueFrom, skip } from 'rxjs';
 import { Usuario } from '../clases/usuario';
-import { CollectionReference, DocumentData, Firestore, Query, collection, collectionData, deleteDoc, doc, setDoc } from '@angular/fire/firestore';
+import { CollectionReference, DocumentData, Firestore, Query, collection, collectionData, deleteDoc, doc, orderBy, query, setDoc } from '@angular/fire/firestore';
+import { LoginLog } from '../../../clases/login-log';
 
 @Injectable({
   providedIn: 'root'
@@ -71,7 +72,7 @@ export class UsuarioService {
   }
 
   LoginLog(uid: string, email: string) {
-    let log = {
+    let log: LoginLog = {
       fecha: Date.now(),
       uid: uid,
       correo: email
@@ -81,8 +82,11 @@ export class UsuarioService {
   }
 
   TraerLoginLogs() {
-    let query: Query<DocumentData, DocumentData> = this.loginlogsRef;
-    return collectionData<DocumentData>(query, { idField: 'uid' });
+    let filteredQuery: Query<LoginLog, DocumentData> = query(
+      this.loginlogsRef,
+      orderBy('fecha', 'asc')
+    ) as Query<LoginLog, DocumentData>;
+    return collectionData<LoginLog>(filteredQuery);
   }
 
   ClonarUsuario(_usuario: Usuario) {
