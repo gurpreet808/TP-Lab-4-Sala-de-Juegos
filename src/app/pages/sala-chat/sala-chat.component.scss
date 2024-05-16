@@ -6,9 +6,9 @@ div#sala_chat_container {
     height: 100%;
 }
 
-$sendmessagebox: 3rem;
+$sendmessagebox: 4rem;
 
-div#mensajes {
+div#mensajes_container {
     height: calc(100% - #{$sendmessagebox});
     overflow-y: scroll;
     display: flex;
@@ -18,27 +18,28 @@ div#mensajes {
     gap: 0.25rem;
 }
 
-div#enviar_mensaje {
+div#enviar_mensaje_container {
     height: $sendmessagebox;
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 0;
     gap: 0.25rem;
+
+    input {
+        //flex-grow: 1;
+        width: 100%;
+    }
 }
 
-div#enviar_mensaje input {
-    flex-grow: 1;
-}
 
 div[name="mensaje_card"] {
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
     margin: 0;
-    border: grey 2px solid;
     border-radius: 0.3rem;
-    width: 90%;
+    width: fit-content;
     background: #ebebeb;
     border: solid #808080;
     border-width: 0 0 0 6px;

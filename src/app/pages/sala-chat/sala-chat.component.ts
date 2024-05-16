@@ -5,7 +5,7 @@ import { UsuarioService } from '../../modulos/auth/servicios/usuario.service';
 import { AuthService } from '../../modulos/auth/servicios/auth.service';
 import { FormsModule } from '@angular/forms';
 import { AutorPropioPipe } from '../../pipes/autor-propio.pipe';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
@@ -13,6 +13,7 @@ import { ButtonModule } from 'primeng/button';
   standalone: true,
   imports: [
     FormsModule,
+    CommonModule,
     AutorPropioPipe,
     DatePipe,
     ButtonModule
