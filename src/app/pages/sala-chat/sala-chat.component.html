@@ -3,7 +3,7 @@
         @for (mensaje of mensajes; track $index) {
         <div name="mensaje_card" [class.mensaje_propio]="mensaje.nombre === servAuth.usuarioActual.value!.email">
             <div name="mensaje_autor">
-                {{mensaje.nombre | autorPropio: servAuth.usuarioActual.value!}}
+                {{mensaje.nombre | autorPropio: servAuth.usuarioActual.value!.email}}
             </div>
 
             <div name="mensaje_texto">

@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Usuario } from '../modulos/auth/clases/usuario';
 
 @Pipe({
   name: 'autorPropio',
@@ -7,8 +6,8 @@ import { Usuario } from '../modulos/auth/clases/usuario';
 })
 export class AutorPropioPipe implements PipeTransform {
 
-  transform(nombre: string, usuario: Usuario): unknown {
-    if (nombre == usuario.email) {
+  transform(nombre: string, usuarioActual: string): string {
+    if (nombre == usuarioActual) {
       return 'Tú';
     }
 

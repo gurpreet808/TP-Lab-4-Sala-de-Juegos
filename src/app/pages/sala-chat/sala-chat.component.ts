@@ -4,7 +4,7 @@ import { MensajeService } from './servicios/mensaje.service';
 import { UsuarioService } from '../../modulos/auth/servicios/usuario.service';
 import { AuthService } from '../../modulos/auth/servicios/auth.service';
 import { FormsModule } from '@angular/forms';
-import { AutorPropioPipe } from '../../pipes/autor-propio.pipe';
+import { AutorPropioPipe } from './pipes/autor-propio.pipe';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { InputGroupModule } from 'primeng/inputgroup';
