@@ -13,12 +13,14 @@ div#mayormenor_container {
 
 div#mayormenor_body {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     width: 100%;
     max-width: 400px;
     gap: 0.5rem;
+    font-size: 1.75rem;
 }
 
 div#mayormenor_body>div {
@@ -36,4 +38,9 @@ div#mayormenor_button_container {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+}
+
+div#mayormenor_cartas_restantes {
+    font-size: 1.5rem;
+    text-align: center;
 }
