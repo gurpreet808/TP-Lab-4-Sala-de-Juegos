@@ -41,6 +41,10 @@ export class NavBarComponent {
         {
           label: 'Preguntados',
           routerLink: '/preguntados'
+        },
+        {
+          label: 'CromaInstinct',
+          routerLink: '/cromainstinct'
         }
       ]
     },

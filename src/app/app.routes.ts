@@ -10,6 +10,7 @@ export const routes: Routes = [
     { path: "quien-soy", loadComponent: () => import('./pages/quien-soy/quien-soy.component').then(c => c.QuienSoyComponent) },
     { path: "ahorcado", loadComponent: () => import('./pages/ahorcado/ahorcado.component').then(c => c.AhorcadoComponent) },
     { path: "mayor-menor", loadComponent: () => import('./pages/mayor-menor/mayor-menor.component').then(c => c.MayorMenorComponent) },
+    { path: "cromainstinct", loadComponent: () => import('./pages/croma-instinct/croma-instinct.component').then(c => c.CromaInstinctComponent) },
     { path: "sala-chat", loadComponent: () => import('./pages/sala-chat/sala-chat.component').then(c => c.SalaChatComponent) },
     { path: "**", component: Error404Component }
 ];

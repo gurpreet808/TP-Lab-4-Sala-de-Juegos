@@ -1,0 +1,31 @@
+<div id="cromainstinct_container">
+    <h1 id="cromainstinct_title">CromaInstinct</h1>
+
+    @if (colorNombre !== -1 && colorFondo !== -1) {
+    <div id="cromainstinct_texto" [style.color]="colores[colorFondo].fondo">
+        {{ colores[colorNombre].nombre }}
+    </div>
+    }
+
+    @if (!juegoFinalizado) {
+    <div>¿Coincide el color con el nombre?</div>
+    <div id="cromainstinct_opciones_container">
+        <button pButton pRipple class="p-button-success" (click)="verificarRespuesta(true)">Sí</button>
+        <button pButton pRipple class="p-button-danger" (click)="verificarRespuesta(false)">No</button>
+    </div>
+    }
+
+    @if (tiempoRestante > 0) {
+    <div id="cromainstinct_cronometro">Tiempo restante: {{ tiempoRestante }} segundos</div>
+    }
+
+    <div id="cromainstinct_puntaje">
+        Puntaje: {{ puntaje }}
+    </div>
+
+    @if (juegoFinalizado) {
+    <div id="cromainstinct_reiniciar">
+        <button pButton pRipple class="p-button-primary" (click)="reiniciarJuego()">Iniciar</button>
+    </div>
+    }
+</div>
