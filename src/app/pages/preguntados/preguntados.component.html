@@ -1,1 +1,44 @@
-<p>preguntados works!</p>
+<div id="preguntados_container">
+    <h1 id="preguntados_title">Preguntados</h1>
+
+    <div>Puntaje: {{puntaje}}</div>
+    <div>Pregunta {{rondaActual}} de {{rondas}}</div>
+
+    @if (idPaisElegido != -1) {
+    <div id="preguntados_juego_container">
+        <div id="preguntados_img_container">
+            <img id="preguntados_img" [src]="servPaises.paises[idPaisElegido].url_foto" alt="">
+            <!-- <div>{{servPaises.paises[idPaisElegido].nombre}}</div> -->
+        </div>
+
+        <div id="preguntados_panel_container">
+            <div id="preguntados_pregunta">¿De qué país es esta bandera?</div>
+
+            @if (!rondaFinalizada) {
+            @for (p of opcionesPaises; track $index) {
+            <button pButton pButton pRipple class="p-button-secondary w-full" [label]="servPaises.paises[p].nombre"
+                (click)="ElegirOpcion(p)" [disabled]="rondaFinalizada"></button>
+            }
+            } @else {
+            <div id="preguntados_reiniciar_container">
+                @if (ganoRonda) {
+                <div>Acertaste! :)</div>
+                } @else {
+                <div>Fallaste! :(</div>
+                }
+
+                @if (this.rondaActual < this.rondas) { <button pButton pRipple class="p-button-primary w-full"
+                    label="Siguiente ronda" (click)="IniciarRonda()"></button>
+                    }
+
+                    @if (this.rondaActual == this.rondas) {
+                    <button pButton pRipple class="p-button-primary w-full" label="Reiniciar juego"
+                        (click)="ReiniciarJuego()"></button>
+                    }
+
+            </div>
+            }
+        </div>
+    </div>
+    }
+</div>
