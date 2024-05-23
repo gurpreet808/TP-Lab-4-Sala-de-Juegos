@@ -20,6 +20,7 @@
                 (click)="ElegirOpcion(p)" [disabled]="rondaFinalizada"></button>
             }
             } @else {
+            <div id="preguntados_nombre_correcto">Es de {{servPaises.paises[idPaisElegido].nombre}}</div>
             <div id="preguntados_reiniciar_container">
                 @if (ganoRonda) {
                 <div>Acertaste! :)</div>

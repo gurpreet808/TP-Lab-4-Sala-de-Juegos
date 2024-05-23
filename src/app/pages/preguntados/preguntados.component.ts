@@ -15,6 +15,7 @@ import { ButtonModule } from 'primeng/button';
 export class PreguntadosComponent implements OnInit {
   idPaisElegido: number = -1;
   opcionesPaises: number[] = [];
+  paisesUsados: number[] = [];
   rondaFinalizada: boolean = false;
   ganoRonda: boolean = false;
   rondas: number = 10;
@@ -56,7 +57,13 @@ export class PreguntadosComponent implements OnInit {
   }
 
   ElegirPaisAleatorio() {
-    this.idPaisElegido = Math.floor(Math.random() * this.servPaises.paises.length);
+    let nuevoIdPais: number;
+    do {
+      nuevoIdPais = Math.floor(Math.random() * this.servPaises.paises.length);
+    } while (this.paisesUsados.includes(nuevoIdPais));
+
+    this.idPaisElegido = nuevoIdPais;
+    this.paisesUsados.push(nuevoIdPais);
   }
 
   ElegirOpcionesAleatorias(idPaisElegido: number) {
